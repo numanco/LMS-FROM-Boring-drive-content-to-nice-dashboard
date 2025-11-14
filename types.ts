@@ -16,6 +16,13 @@ export interface Module {
   lessons?: Lesson[];
 }
 
+export interface Advertisement {
+  id: string;
+  imageUrl: string;
+  affiliateUrl: string;
+  altText: string;
+}
+
 export interface Course {
   id: string;
   title: string;
@@ -24,4 +31,5 @@ export interface Course {
   modules?: Module[];
   subCourses?: Course[];
   resources?: Resource[];
+  advertisement?: Advertisement;
 }

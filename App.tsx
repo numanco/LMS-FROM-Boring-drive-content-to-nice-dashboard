@@ -60,6 +60,10 @@ const App: React.FC = () => {
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
+       // If no session is found, stop loading.
+      if (!session) {
+        setIsLoadingProgress(false);
+      }
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -89,8 +93,8 @@ const App: React.FC = () => {
   // Load/clear progress from Supabase based on session
   useEffect(() => {
     const fetchProgress = async () => {
-      setIsLoadingProgress(true);
       if (session) {
+        setIsLoadingProgress(true);
         const { data, error } = await supabase
           .from('user_progress')
           .select('completed_ids')
@@ -103,12 +107,14 @@ const App: React.FC = () => {
           setCompletedLessons(new Set());
         }
         if (error && error.code !== 'PGRST116') { // PGRST116: no rows found
-          console.error("Error fetching user progress:", error);
+          console.error("Error fetching user progress:", error.message);
         }
+        setIsLoadingProgress(false);
       } else {
+        // No session, so clear progress and stop loading.
         setCompletedLessons(new Set());
+        setIsLoadingProgress(false);
       }
-      setIsLoadingProgress(false);
     };
 
     fetchProgress();
@@ -123,10 +129,12 @@ const App: React.FC = () => {
           .upsert({
             user_id: session.user.id,
             completed_ids: Array.from(completedLessons),
+          }, {
+            onConflict: 'user_id'
           });
 
         if (error) {
-          console.error("Error saving user progress:", error);
+          console.error("Error saving user progress:", error.message);
         }
       };
       // Debouncing this would be ideal in a real-world app
@@ -227,9 +235,18 @@ const App: React.FC = () => {
   };
   
   const renderContent = () => {
+    if (isLoadingProgress) {
+        return (
+          <div className="loading-container">
+              <div className="spinner"></div>
+              <p>Loading your progress...</p>
+          </div>
+        );
+    }
+
     if (selectedCourse) {
       const onBack = selectedClassroom ? handleBackToClassroom : handleBackToHome;
-      const backButtonText = selectedClassroom ? `Back to ${selectedClassroom.title}` : "All Courses";
+      const backButtonText = selectedClassroom ? `Back to ${selectedClassroom.title}` : "Learn with Raftaar";
   
       return (
         <div className="dashboard-layout">
@@ -279,7 +296,7 @@ const App: React.FC = () => {
       <CourseGrid
         courses={COURSES}
         onCourseClick={(course, index) => handleSelectTopLevelCourse(course, index!)}
-        title="All Courses"
+        title="Learn with Raftaar"
         subtitle="Select a course to begin your learning journey."
         completedLessons={session ? completedLessons : undefined}
         unlockedCourseIndex={unlockedCourseIndex}

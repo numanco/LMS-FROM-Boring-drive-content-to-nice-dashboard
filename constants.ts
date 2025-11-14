@@ -1,5 +1,3 @@
-
-
 import { Course } from './types';
 
 export const COURSES: Course[] = [
@@ -389,6 +387,12 @@ export const COURSES: Course[] = [
         title: 'AI Automations',
         author: 'Jack Roberts',
         thumbnailUrl: 'https://placehold.co/600x400/2a2a2a/ffffff?text=AI+Automations',
+        advertisement: {
+          id: 'ad-n8n-hosting-1',
+          imageUrl: 'https://placehold.co/272x150/bb86fc/121212?text=Host+your+n8n%0Aon+Hostinger',
+          affiliateUrl: 'https://www.hostinger.com/pk/referral?REFERRALCODE=evalinfo',
+          altText: 'Ad for hosting n8n on Hostinger',
+        },
         modules: [
             {
                 id: '3-2-1',
@@ -491,6 +495,12 @@ export const COURSES: Course[] = [
         title: 'Advanced Technology',
         author: 'Jack Roberts',
         thumbnailUrl: 'https://placehold.co/600x400/2a2a2a/ffffff?text=Advanced+Tech',
+        advertisement: {
+          id: 'ad-n8n-hosting-1',
+          imageUrl: 'https://placehold.co/272x150/bb86fc/121212?text=Host+your+n8n%0Aon+Hostinger',
+          affiliateUrl: 'https://www.hostinger.com/pk/referral?REFERRALCODE=evalinfo',
+          altText: 'Ad for hosting n8n on Hostinger',
+        },
         modules: [
           {
             id: '3-3-1',
@@ -1064,144 +1074,11 @@ export const COURSES: Course[] = [
                     { id: '3-5-3-133', title: 'Lesson 133', url: 'https://drive.google.com/file/d/1aFoo-JJtmeB0BLTlmpZcUkS6KI-XE8t0/preview' },
                     { id: '3-5-3-134', title: 'Lesson 134', url: 'https://drive.google.com/file/d/1wWfij2AfeDm5VM-W12W6efn4bErjIqKj/preview' },
                     { id: '3-5-3-135', title: 'Lesson 135', url: 'https://drive.google.com/file/d/1BAIrTnGCTdr10xVQBOs0aerNO-KKGHs9/preview' },
-                    { id: '3-5-3-136', title: 'Lesson 136', url: 'https://drive.google.com/file/d/1MBUKz7j8GjXeyILolCvSsKkYKoJvwsbx/preview' },
-                    { id: '3-5-3-137', title: 'Lesson 137', url: 'https://drive.google.com/file/d/1cK-OScGq1ju4fg9BFYVfUCQgrvd8Hc-2/preview' },
-                    { id: '3-5-3-138', title: 'Lesson 138', url: 'https://drive.google.com/file/d/1t1lRYxXTWg7ggQ81CKzYvMlmrfn672M3/preview' },
-                    { id: '3-5-3-139', title: 'Lesson 139', url: 'https://drive.google.com/file/d/1HaBcQ1XrpTuhTh5-fo0wybQEBefSwzXY/preview' },
-                    { id: '3-5-3-140', title: 'Lesson 140', url: 'https://drive.google.com/file/d/1Tuk4guJsYozL2BPCcM0zgXIS2OtnLPBB/preview' },
-                    { id: '3-5-3-141', title: 'Lesson 141', url: 'https://drive.google.com/file/d/17NIJRoEhEAu5Yni6SN9qCxtx22FE50PL/preview' },
-                    { id: '3-5-3-142', title: 'Lesson 142', url: 'https://drive.google.com/file/d/14sp4Dp2bzJ4u_gUn9TJq6qSI_W3eetPj/preview' },
-                    { id: '3-5-3-143', title: 'Lesson 143', url: 'https://drive.google.com/file/d/1l4Q69vcAvMSGh_mJCUd63oAjjoR5HwnS/preview' },
-                    { id: '3-5-3-144', title: 'Lesson 144', url: 'https://drive.google.com/file/d/1S9pbfnYpyYMVqwrUAaJozIgsyC7-Vf7z/preview' },
-                    { id: '3-5-3-145', title: 'Lesson 145', url: 'https://drive.google.com/file/d/17qTTMTpVhVezMRKdc1dOa4hmLgedK9Iy/preview' },
-                    { id: '3-5-3-146', title: 'Lesson 146', url: 'https://drive.google.com/file/d/1WWQ41jik46tRaHR2CfdAhde7CFTJ_aXw/preview' },
-                    { id: '3-5-3-147', title: 'Lesson 147', url: 'https://drive.google.com/file/d/1R8nEDG_yjGcRA_nO9SEyzWkvWTV2oKtM/preview' },
-                    { id: '3-5-3-148', title: 'Lesson 148', url: 'https://drive.google.com/file/d/17sw2rOWO8r-gV6hkWWZS-eZilyIwlQsB/preview' },
-                    { id: '3-5-3-149', title: 'Lesson 149', url: 'https://drive.google.com/file/d/1TCe7D254n1EDKHHWvpa7MVGWCXDFx1Hu/preview' },
-                    { id: '3-5-3-150', title: 'Lesson 150', url: 'https://drive.google.com/file/d/1pRjRV6RVVKbABPPLeBdz_xOsadroICZT/preview' },
-                    { id: '3-5-3-151', title: 'Lesson 151', url: 'https://drive.google.com/file/d/17I56Fe262LRoOtxCYWCIyUiuo4aDL20I/preview' },
-                    { id: '3-5-3-152', title: 'Lesson 152', url: 'https://drive.google.com/file/d/1prPB_GuDiM8T61aRZ9wv1M081LGUHgBE/preview' },
-                    { id: '3-5-3-153', title: 'Lesson 153', url: 'https://drive.google.com/file/d/138zPcfZX8DifD7EiaTa3kVtDehphNdL6/preview' },
-                    { id: '3-5-3-154', title: 'Lesson 154', url: 'https://drive.google.com/file/d/14h-KIpRIooG9AHiWkWCfpfRgAeZ08jsf/preview' },
-                    { id: '3-5-3-155', title: 'Lesson 155', url: 'https://drive.google.com/file/d/13PYgAKMqWHdX7maWqGnvda5Dhxauiya7/preview' },
-                    { id: '3-5-3-156', title: 'Lesson 156', url: 'https://drive.google.com/file/d/10FnfDlTmh29YNTXsdOebsXiJ-46c_8zc/preview' },
-                    { id: '3-5-3-157', title: 'Lesson 157', url: 'https://drive.google.com/file/d/18iIdwOJNROOFQeL0HpKWH-KuTvBHMnMc/preview' },
-                    { id: '3-5-3-158', title: 'Lesson 158', url: 'https://drive.google.com/file/d/1WhrWvLCWr8UXPCwM5lFehJHw88ZUAjKf/preview' },
-                    { id: '3-5-3-159', title: 'Lesson 159', url: 'https://drive.google.com/file/d/1X6FpCK4KeKh1UupPaqIJUgoGy2sJqzjb/preview' },
-                    { id: '3-5-3-160', title: 'Lesson 160', url: 'https://drive.google.com/file/d/15cUVsSfoPXqRKtGfM9d7bW7AibK-uf-J/preview' },
-                    { id: '3-5-3-161', title: 'Lesson 161', url: 'https://drive.google.com/file/d/1kt-cLhf6GYLf7IoC3FfVoLVXwq7xC-4d/preview' },
-                    { id: '3-5-3-162', title: 'Lesson 162', url: 'https://drive.google.com/file/d/1X312LlVmjcKy8_mK37ffNsN9W_jgamfY/preview' },
-                    { id: '3-5-3-163', title: 'Lesson 163', url: 'https://drive.google.com/file/d/1QOQYJ1E-5pJldnca7KqJAaMWbQ8XQdOf/preview' },
-                    { id: '3-5-3-164', title: 'Lesson 164', url: 'https://drive.google.com/file/d/1_pNd4iG5QtJT8YpPH9W-wNDcKZklk-ca/preview' },
-                    { id: '3-5-3-165', title: 'Lesson 165', url: 'https://drive.google.com/file/d/1dJcgWLzG8jh3VJG4qUQKUKH_ZaC598r9/preview' },
-                ]
-            },
-            {
-                id: '3-5-4',
-                title: '04 Leads Generation',
-                lessons: [
-                    { id: '3-5-4-1', title: 'Lesson 1', url: 'https://drive.google.com/file/d/1PDke2M0ZDI4Ws6_Vo8mI5UXQmGN955MR/preview' },
-                    { id: '3-5-4-2', title: 'Lesson 2', url: 'https://drive.google.com/file/d/1yl8ig7cZPcvnSaHLHIk-A6izdb4hqM8Z/preview' },
-                    { id: '3-5-4-3', title: 'Lesson 3', url: 'https://drive.google.com/file/d/1MQoIXXZc-xDaMFAivu4bhUszbtwqq0pJ/preview' },
-                    { id: '3-5-4-4', title: 'Lesson 4', url: 'https://drive.google.com/file/d/1_lZ3W0oSsE_X3TZd-VsJycbDlW6BoQTm/preview' },
-                    { id: '3-5-4-5', title: 'Lesson 5', url: 'https://drive.google.com/file/d/1vEjB6TvuMphja0sO_GUg2rIrfGufRuo1/preview' },
-                    { id: '3-5-4-6', title: 'Lesson 6', url: 'https://drive.google.com/file/d/1Dw_SvWY0RnMs0Z8FaXBPgAB1JEzkdQ1s/preview' },
-                    { id: '3-5-4-7', title: 'Lesson 7', url: 'https://drive.google.com/file/d/1AR0ahUdfMltFb2PlN8c4yVqY1lkP0lDa/preview' },
-                    { id: '3-5-4-8', title: 'Lesson 8', url: 'https://drive.google.com/file/d/15PfSpdMIeyvkXqDP_Di4G5FNVtypsaXm/preview' },
-                    { id: '3-5-4-9', title: 'Lesson 9', url: 'https://drive.google.com/file/d/1N1Oc50c8xCzS_N3dcuZIDaYPpaXpxLyE/preview' },
-                    { id: '3-5-4-10', title: 'Lesson 10', url: 'https://drive.google.com/file/d/1BSzO9ESc7JEj-ZrixjMOBqJasPCOLHto/preview' },
-                    { id: '3-5-4-11', title: 'Lesson 11', url: 'https://drive.google.com/file/d/1mXO-bC_adig68Dvo8VD1hvzCZaBXZpDI/preview' },
-                    { id: '3-5-4-12', title: 'Lesson 12', url: 'https://drive.google.com/file/d/17nycCM4qBvG8fqlkpHmd-4QOEithxdEf/preview' },
-                    { id: '3-5-4-13', title: 'Lesson 13', url: 'https://drive.google.com/file/d/1-1x33-gkWP9cQBtL_MgA1cky46q2htWI/preview' },
-                    { id: '3-5-4-14', title: 'Lesson 14', url: 'https://drive.google.com/file/d/1nRXBZaevF214PdZUO-6I_OIFJekdaJH3/preview' },
-                    { id: '3-5-4-15', title: 'Lesson 15', url: 'https://drive.google.com/file/d/16oulkIyeFvgIF5ExmuB4_5mUN-dh04k4/preview' },
-                    { id: '3-5-4-16', title: 'Lesson 16', url: 'https://drive.google.com/file/d/1pCaKHJR_9CmbxNPcPYqsX_J53OaFQaTg/preview' },
-                    { id: '3-5-4-17', title: 'Lesson 17', url: 'https://drive.google.com/file/d/1CRxDEksKM0DCorMH4337PqQgvUpQhkwT/preview' },
-                    { id: '3-5-4-18', title: 'Lesson 18', url: 'https://drive.google.com/file/d/1g7sdnIWF3nm-929dn-UWcpFjBHS1lINv/preview' },
-                    { id: '3-5-4-19', title: 'Lesson 19', url: 'https://drive.google.com/file/d/1yLphVjihyuE0KteN6mmo67HVQ3T2db8i/preview' },
-                    { id: '3-5-4-20', title: 'Lesson 20', url: 'https://drive.google.com/file/d/1eashsVflUPiGfOYpxTw5_aQsK0WB9xq0/preview' },
-                    { id: '3-5-4-21', title: 'Lesson 21', url: 'https://drive.google.com/file/d/1RVDwQYjDQ_GW74IA0ayUfc2doJd4vGkt/preview' },
-                    { id: '3-5-4-22', title: 'Lesson 22', url: 'https://drive.google.com/file/d/1rd7Oa1WfHykULH5_a5qN4nA6h9CaAhfh/preview' },
-                    { id: '3-5-4-23', title: 'Lesson 23', url: 'https://drive.google.com/file/d/1uJ1mISttATIgZM9Fxr-MZO5c7r7tLrIj/preview' },
-                    { id: '3-5-4-24', title: 'Lesson 24', url: 'https://drive.google.com/file/d/1qEuuZzTYK1ohqEZQLAnFs_qW9JOONXw0/preview' },
-                    { id: '3-5-4-25', title: 'Lesson 25', url: 'https://drive.google.com/file/d/1nhiz9tTal1ljVBuANaFnRNXLUCFv_QnB/preview' },
-                    { id: '3-5-4-26', title: 'Lesson 26', url: 'https://drive.google.com/file/d/1b1as9giRU1UL_X722Uj7_oDv4poKfSFQ/preview' },
-                    { id: '3-5-4-27', title: 'Lesson 27', url: 'https://drive.google.com/file/d/1pI5f-2aoxuNh_4kvpqFMfHupUDlqSxtU/preview' },
-                    { id: '3-5-4-28', title: 'Lesson 28', url: 'https://drive.google.com/file/d/1vR9-102oTp21CeJsmOr9mWNksFNm5aR4/preview' },
-                    { id: '3-5-4-29', title: 'Lesson 29', url: 'https://drive.google.com/file/d/1rGesCbuiOJGf5rJpMD93TxGTfCNfOOh5/preview' },
-                    { id: '3-5-4-30', title: 'Lesson 30', url: 'https://drive.google.com/file/d/1coiLmXhnoBfHsL6PE1NBkkQPEWK_U_Lz/preview' },
-                    { id: '3-5-4-31', title: 'Lesson 31', url: 'https://drive.google.com/file/d/15gZAODtDvCaqi2lINLhPvu6Y1vunHrmf/preview' },
-                    { id: '3-5-4-32', title: 'Lesson 32', url: 'https://drive.google.com/file/d/18Jmnd7hoIS6mxcxmacd4tY4-OHpXmjUf/preview' },
-                    { id: '3-5-4-33', title: 'Lesson 33', url: 'https://drive.google.com/file/d/1JjtbX8TYCHBoX8VK2-F2YqNk7zgZIiWg/preview' },
-                ]
-            },
-            {
-                id: '3-5-5',
-                title: '05 Iamge Video',
-                lessons: [
-                    { id: '3-5-5-1', title: 'Lesson 1', url: 'https://drive.google.com/file/d/1XGoLVwK-sBVb85y9vRpxrV_1wjLeRYR0/preview' },
-                    { id: '3-5-5-2', title: 'Lesson 2', url: 'https://drive.google.com/file/d/1PCPPMBSPV1RPHad6StajISYg2vfwB_Bw/preview' },
-                    { id: '3-5-5-3', title: 'Lesson 3', url: 'https://drive.google.com/file/d/1jynDpoxO9DJSopLtIhEBd2dQecLFKxkJ/preview' },
-                    { id: '3-5-5-4', title: 'Lesson 4', url: 'https://drive.google.com/file/d/1EPEj9pVDLV5S-5qkpMtUrarF4O6Y8Lbz/preview' },
-                    { id: '3-5-5-5', title: 'Lesson 5', url: 'https://drive.google.com/file/d/17QNhzlzCpwJEOrWLYxzCFUzS8IEBIXhz/preview' },
-                    { id: '3-5-5-6', title: 'Lesson 6', url: 'https://drive.google.com/file/d/1uNdhSxg1gFwBuLf1Fh5T5Cx43Xml1NNs/preview' },
-                    { id: '3-5-5-7', title: 'Lesson 7', url: 'https://drive.google.com/file/d/1rogf7QmJEBa6c81V2MsPfOyqhcU67nuO/preview' },
-                    { id: '3-5-5-8', title: 'Lesson 8', url: 'https://drive.google.com/file/d/1AWWrWytSlb-nlQBlt-pDJxYU96ypnF5Y/preview' },
-                    { id: '3-5-5-9', title: 'Lesson 9', url: 'https://drive.google.com/file/d/1wBnLdEm2Kk9qopwIp1I7lTkvdkmy3Lec/preview' },
-                    { id: '3-5-5-10', title: 'Lesson 10', url: 'https://drive.google.com/file/d/1I0UnVEcXqkJ989Jw2HpjA9yQoVvPUaLR/preview' },
-                    { id: '3-5-5-11', title: 'Lesson 11', url: 'https://drive.google.com/file/d/1sYBIWMDsuS9mZbhsUFUFWUcY2gbbyu4D/preview' },
-                    { id: '3-5-5-12', title: 'Lesson 12', url: 'https://drive.google.com/file/d/1z_SmZYgDNbm3v9X7JWlVEwbaW3arQAec/preview' },
-                    { id: '3-5-5-13', title: 'Lesson 13', url: 'https://drive.google.com/file/d/1OCv7TYUt9D2MqVuta_FW3J7Q9-jMyp5i/preview' },
-                    { id: '3-5-5-14', title: 'Lesson 14', url: 'https://drive.google.com/file/d/1XjaCncYlxIUk2bkOJMpiKMxRv09IQzzw/preview' },
-                    { id: '3-5-5-15', title: 'Lesson 15', url: 'https://drive.google.com/file/d/1UhQI2Z-OAMsPlm6oKnM9KAiT9MuDaWde/preview' },
-                    { id: '3-5-5-16', title: 'Lesson 16', url: 'https://drive.google.com/file/d/1U_f7oX4oQAVcZcaXyeAJHAWI50iOrzql/preview' },
-                    { id: '3-5-5-17', title: 'Lesson 17', url: 'https://drive.google.com/file/d/1F6xKMkJc_dYDZD3zfSJdOyURGemh4fyP/preview' },
-                    { id: '3-5-5-18', title: 'Lesson 18', url: 'https://drive.google.com/file/d/1AnDL_GceCu7yZ7gUJETikvvu9cuenLV5/preview' },
-                    { id: '3-5-5-19', title: 'Lesson 19', url: 'https://drive.google.com/file/d/15OTI87u_GOcSb2fxmXDsqBYmKkRZBTda/preview' },
-                    { id: '3-5-5-20', title: 'Lesson 20', url: 'https://drive.google.com/file/d/1EyfE-Abj4WvsOhOMO5MTk8i4OSxGzeyn/preview' },
-                    { id: '3-5-5-21', title: 'Lesson 21', url: 'https://drive.google.com/file/d/1IBH7_NImJEPQEM5ZKgKo4YnO-XA_9XFF/preview' },
-                    { id: '3-5-5-22', title: 'Lesson 22', url: 'https://drive.google.com/file/d/1qPYvq14bJzvpmov9jv2QPcBahCsCP34A/preview' },
-                    { id: '3-5-5-23', title: 'Lesson 23', url: 'https://drive.google.com/file/d/1itCxVYBS1lnswykMSwufbeGYE-pjFQWp/preview' },
-                    { id: '3-5-5-24', title: 'Lesson 24', url: 'https://drive.google.com/file/d/1iu_9UeujolgpxdzDJyVJTe7M0vKO7wtl/preview' },
-                    { id: '3-5-5-25', title: 'Lesson 25', url: 'https://drive.google.com/file/d/1rUyHO0QTAMXzFLne1bK85i49BOXJlLl0/preview' },
-                    { id: '3-5-5-26', title: 'Lesson 26', url: 'https://drive.google.com/file/d/13KC9uiaHzJ1aZmTJw0IFfd-taMWrMSat/preview' },
-                    { id: '3-5-5-27', title: 'Lesson 27', url: 'https://drive.google.com/file/d/1YtDjU7Bik_uUqRwvoY-ixXjSycVLGUhC/preview' },
-                ]
-            }
-        ],
-      },
-      {
-        id: '3-6',
-        title: 'Masterclasses',
-        author: 'Jack Roberts',
-        thumbnailUrl: 'https://placehold.co/600x400/2a2a2a/ffffff?text=Masterclasses',
-        modules: [
-            {
-                id: '3-6-1',
-                title: 'Masterclass Sessions',
-                lessons: [
-                    { id: '3-6-1-1', title: 'Lesson 1', url: 'https://drive.google.com/file/d/1jiKyxWjGcVrBqU-8EVLvRgGrabXsMXqc/preview' },
-                    { id: '3-6-1-2', title: 'Lesson 2', url: 'https://drive.google.com/file/d/16RX_Hd4OSnsUirm9BJ1zzu3wdkHnUhNX/preview' },
-                    { id: '3-6-1-3', title: 'Lesson 3', url: 'https://drive.google.com/file/d/1NIx0BNXi1rZ_Cq92BgGkJu5FhdtCCgWW/preview' },
-                    { id: '3-6-1-4', title: 'Lesson 4', url: 'https://drive.google.com/file/d/1nE-yeRDxapDms98LqWBi6AAj5TdiIoBj/preview' },
-                    { id: '3-6-1-5', title: 'Lesson 5', url: 'https://drive.google.com/file/d/1n5m8WAzFSS94tp9bMqwHIjDcWX58EDy9/preview' },
-                    { id: '3-6-1-6', title: 'Lesson 6', url: 'https://drive.google.com/file/d/12O4-JKGF0RkR0HZKoe3uVY1_uXhBk4Yu/preview' },
-                    { id: '3-6-1-7', title: 'Lesson 7', url: 'https://drive.google.com/file/d/16DjoOsQ38EpTYVguQ003BvA89TpEWfaQ/preview' },
-                    { id: '3-6-1-8', title: 'Lesson 8', url: 'https://drive.google.com/file/d/1V1IwaYU8jbKPZQFco23s9TsUugXwnrm8/preview' },
-                    { id: '3-6-1-9', title: 'Lesson 9', url: 'https://drive.google.com/file/d/1F5mrKnCSdaNjBhLtd2rc6a6MXJhC9pMY/preview' },
-                    { id: '3-6-1-10', title: 'Lesson 10', url: 'https://drive.google.com/file/d/1TrlRwDu-3c6ZvnhwaJiDwtL8Lj3yHx4H/preview' },
-                    { id: '3-6-1-11', title: 'Lesson 11', url: 'https://drive.google.com/file/d/1092s2xP8lA3LIpeOOQG9AFghdqPg7o4Z/preview' },
-                    { id: '3-6-1-12', title: 'Lesson 12', url: 'https://drive.google.com/file/d/1qADIgtcY9dC5sO8qJJ8tw8oj_qzZ3ZU1/preview' },
-                    { id: '3-6-1-13', title: 'Lesson 13', url: 'https://drive.google.com/file/d/1L0qSpum8kqk5R4VMoc3K4X1Jk967pDTY/preview' },
-                    { id: '3-6-1-14', title: 'Lesson 14', url: 'https://drive.google.com/file/d/1QLWYz7IClcolnEJJ_xpbmH_tPJ1emtM-/preview' },
-                    { id: '3-6-1-15', title: 'Lesson 15', url: 'https://drive.google.com/file/d/1Vj_2og_5L2f0p41JZqpT9kepXYT6Ncfk/preview' },
-                    { id: '3-6-1-16', title: 'Lesson 16', url: 'https://drive.google.com/file/d/1UUJs9_xtJZRNBrOuYDE1924bYy2U4Ciq/preview' },
-                    { id: '3-6-1-17', title: 'Lesson 17', url: 'https://drive.google.com/file/d/1So-YPC3n4SPR8jitACy9SpLCArj-2ZKk/preview' },
-// FIX: Removed an incomplete object that was causing a syntax error and closed the data structure correctly.
+                    { id: '3-5-3-136', title: 'Lesson 136', url: 'https://drive.google.com/file/d/1MBUKz7j8Gj-/preview' }
                 ]
             }
         ]
-      },
+      }
     ]
-  },
+  }
 ];

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Classroom</title>
+    <link rel="icon" type="image/png" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4AQ_okU2WB9j8GJQdGuK-27L6SfeeHEftzjeiOawF9qWTTZ4-8BDv-9ijkBJNKAye4Zz9FBARHvaxruiioEuCeuUCM9ZbzZb8O5IdiVm_ku_1-mEXXvIhEiFALvyv0UMEAQyKT9RFpukV-9JfsZWYvw5HhjFNR_WumGMDtdpAnvbZS5fN9Lp-xvuRbRM/s500/Rabtaar.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +34,32 @@
       #root {
         height: 100vh;
         width: 100vw;
+      }
+
+      /* Loading Spinner Styles */
+      .loading-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          flex-direction: column;
+      }
+      .loading-container p {
+          margin-top: 20px;
+          font-size: 1.2rem;
+          color: var(--text-secondary-color);
+      }
+      .spinner {
+        border: 4px solid var(--border-color);
+        border-top: 4px solid var(--primary-color);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
 
       /* Home Page / Course Grid Styles */
@@ -227,6 +254,12 @@
           overflow-y: auto;
           overflow-x: hidden;
           padding: 1.5rem;
+          display: flex;
+          flex-direction: column;
+      }
+      
+      nav {
+        flex-grow: 1;
       }
 
       .sidebar-header {
@@ -363,6 +396,31 @@
       .sidebar-resource-list {
         list-style: none;
         padding-left: 1rem;
+      }
+
+      .sidebar-ad-container {
+        padding-top: 1.5rem;
+        margin-top: auto;
+        border-top: 1px solid var(--border-color);
+      }
+      .sidebar-ad-container a {
+        display: block;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: box-shadow 0.2s;
+      }
+      .sidebar-ad-container a:hover {
+        box-shadow: 0 0 12px rgba(187, 134, 252, 0.3);
+      }
+      .sidebar-ad-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: opacity 0.2s;
+      }
+      .sidebar-ad-container a:hover .sidebar-ad-image {
+        opacity: 0.9;
       }
       
       /* Dashboard Header & Progress */
