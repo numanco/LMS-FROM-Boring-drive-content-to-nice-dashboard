@@ -101,6 +101,7 @@
         cursor: pointer;
         display: flex;
         flex-direction: column;
+        position: relative;
       }
 
       .course-card:hover {
@@ -127,12 +128,36 @@
         font-weight: 600;
         margin-bottom: 0.5rem;
         line-height: 1.4;
-        flex-grow: 1;
       }
 
       .course-card-author {
         font-size: 0.9rem;
         color: var(--text-secondary-color);
+      }
+      
+      .course-card-progress-container {
+        margin-top: auto; /* Push to the bottom */
+        padding-top: 1rem;
+      }
+      .course-card-progress-info {
+          display: flex;
+          justify-content: space-between;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: var(--text-secondary-color);
+          margin-bottom: 0.35rem;
+      }
+      .course-card-progress-bar-bg {
+          height: 6px;
+          background-color: var(--border-color);
+          border-radius: 3px;
+          overflow: hidden;
+      }
+      .course-card-progress-bar {
+          height: 100%;
+          background-color: var(--secondary-color);
+          border-radius: 3px;
+          transition: width 0.3s ease;
       }
       
       .dashboard-layout {
@@ -510,6 +535,42 @@
       }
       .next-button:hover {
         background-color: var(--border-color);
+      }
+
+      /* Info Modal Styles */
+      .info-modal-content {
+        text-align: center;
+      }
+      .info-modal-content svg {
+        width: 56px;
+        height: 56px;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+      .info-modal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .info-modal-content p {
+        color: var(--text-secondary-color);
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
+        line-height: 1.5;
+      }
+      .info-modal-button {
+        width: 100%;
+        padding: 0.85rem;
+        background-color: var(--primary-color);
+        color: var(--background-color);
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      .info-modal-button:hover {
+        opacity: 0.9;
       }
 
       /* Auth Modal Styles */
