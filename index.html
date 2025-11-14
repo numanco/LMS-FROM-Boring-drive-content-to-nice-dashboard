@@ -346,6 +346,13 @@
         border-bottom: 1px solid var(--border-color);
         background-color: var(--surface-color);
         flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+      .progress-container {
+        flex-grow: 1;
       }
       .progress-info {
           display: flex;
@@ -379,6 +386,21 @@
           border-radius: 4px;
           transition: width 0.3s ease;
       }
+      .logout-button {
+          background-color: var(--hover-color);
+          color: var(--text-color);
+          border: 1px solid var(--border-color);
+          padding: 0.6rem 1.2rem;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.2s;
+          flex-shrink: 0;
+      }
+      .logout-button:hover {
+          background-color: var(--border-color);
+      }
+
 
       /* Main Content Styles */
       .main-content-wrapper {
@@ -489,6 +511,128 @@
       .next-button:hover {
         background-color: var(--border-color);
       }
+
+      /* Auth Modal Styles */
+      .auth-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .auth-modal-content {
+        background-color: var(--surface-color);
+        padding: 2.5rem;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 420px;
+        position: relative;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .auth-modal-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        color: var(--text-secondary-color);
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        line-height: 1;
+      }
+
+      .auth-modal-close:hover {
+          color: var(--text-color);
+      }
+
+      .auth-modal-tabs {
+        display: flex;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 1.5rem;
+      }
+
+      .auth-modal-tab {
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: var(--text-secondary-color);
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-bottom: 3px solid transparent;
+        transition: color 0.2s, border-color 0.2s;
+        flex-grow: 1;
+      }
+
+      .auth-modal-tab.active {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+      }
+
+      .auth-form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .auth-form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--text-secondary-color);
+      }
+
+      .auth-form-group input {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: var(--background-color);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        color: var(--text-color);
+        font-size: 1rem;
+      }
+
+      .auth-form-group input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2);
+      }
+
+      .auth-submit-button {
+        width: 100%;
+        padding: 0.85rem;
+        background-color: var(--primary-color);
+        color: var(--background-color);
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        margin-top: 0.5rem;
+      }
+
+      .auth-submit-button:hover {
+        opacity: 0.9;
+      }
+
+      .auth-submit-button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+      }
+
+      .auth-error {
+        color: #cf6679;
+        margin-top: 1rem;
+        text-align: center;
+      }
     </style>
      <script type="importmap">
 {
@@ -496,7 +640,8 @@
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^0.15.0"
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^0.15.0",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.45.0"
   }
 }
 </script>

@@ -1,4 +1,5 @@
 {
   "name": "Classroom Dashboard",
-  "description": "A dashboard to study videos from a course, track progress, and ask questions, inspired by the Skool classroom interface. It uses a predefined course structure and leverages the Gemini API for an interactive Q&A experience."
+  "description": "A dashboard to study videos from a course, track progress, and ask questions, inspired by the Skool classroom interface. It uses a predefined course structure and leverages the Gemini API for an interactive Q&A experience.",
+  "requestFramePermissions": []
 }

@@ -5,6 +5,9 @@ import Sidebar from './components/Sidebar';
 import LessonViewer from './components/LessonViewer';
 import CourseGrid from './components/CourseGrid';
 import DashboardHeader from './components/DashboardHeader';
+import { supabase } from './services/supabase';
+import type { Session } from '@supabase/supabase-js';
+import AuthModal from './components/AuthModal';
 
 const getAllLessonsAndResources = (course: Course): (Lesson | Resource)[] => {
   let items: (Lesson | Resource)[] = [];
@@ -22,11 +25,45 @@ const getAllLessonsAndResources = (course: Course): (Lesson | Resource)[] => {
 };
 
 const App: React.FC = () => {
+  const [session, setSession] = useState<Session | null>(null);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [courseToOpen, setCourseToOpen] = useState<Course | null>(null);
+
   const [selectedClassroom, setSelectedClassroom] = useState<Course | null>(null);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [activeLesson, setActiveLesson] = useState<Lesson | Resource | null>(null);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
+
+  // Handle user session
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      if (session && courseToOpen) {
+        setIsAuthModalOpen(false);
+        // Navigate to the course that was clicked before the modal opened
+        if (courseToOpen.subCourses && courseToOpen.subCourses.length > 0) {
+            setSelectedClassroom(courseToOpen);
+            setSelectedCourse(null);
+        } else {
+            const isTopLevel = COURSES.some(c => c.id === courseToOpen.id);
+            if (isTopLevel) {
+                setSelectedClassroom(null);
+            }
+            setSelectedCourse(courseToOpen);
+        }
+        setActiveLesson(null);
+        setCourseToOpen(null);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [courseToOpen]);
+
 
   // Load progress from localStorage on initial render
   useEffect(() => {
@@ -83,6 +120,11 @@ const App: React.FC = () => {
 
 
   const handleSelectTopLevelCourse = (course: Course) => {
+    if (!session) {
+      setCourseToOpen(course);
+      setIsAuthModalOpen(true);
+      return;
+    }
     if (course.subCourses && course.subCourses.length > 0) {
       setSelectedClassroom(course);
       setSelectedCourse(null);
@@ -94,6 +136,11 @@ const App: React.FC = () => {
   };
 
   const handleSelectSubCourse = (course: Course) => {
+    if (!session) {
+      setCourseToOpen(course);
+      setIsAuthModalOpen(true);
+      return;
+    }
     setSelectedCourse(course);
     setActiveLesson(null);
   };
@@ -109,64 +156,85 @@ const App: React.FC = () => {
     setActiveLesson(null);
   };
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    handleBackToHome();
+  };
+
   const toggleSidebar = () => {
     setIsSidebarVisible(prev => !prev);
   };
-
-  if (selectedCourse) {
-    const onBack = selectedClassroom ? handleBackToClassroom : handleBackToHome;
-    const backButtonText = selectedClassroom ? `Back to ${selectedClassroom.title}` : "All Courses";
-
-    return (
-      <div className="dashboard-layout">
-        <Sidebar
-          course={selectedCourse}
-          activeLesson={activeLesson}
-          completedLessons={completedLessons}
-          onLessonClick={setActiveLesson}
-          onBack={onBack}
-          backButtonText={backButtonText}
-          isVisible={isSidebarVisible}
-          onToggle={toggleSidebar}
-        />
-        <div className="main-content-wrapper">
-          <DashboardHeader 
-            courseTitle={selectedCourse.title}
-            completedCount={completedCount}
-            totalCount={allCourseItems.length}
+  
+  const renderContent = () => {
+    if (selectedCourse) {
+      const onBack = selectedClassroom ? handleBackToClassroom : handleBackToHome;
+      const backButtonText = selectedClassroom ? `Back to ${selectedClassroom.title}` : "All Courses";
+  
+      return (
+        <div className="dashboard-layout">
+          <Sidebar
+            course={selectedCourse}
+            activeLesson={activeLesson}
+            completedLessons={completedLessons}
+            onLessonClick={setActiveLesson}
+            onBack={onBack}
+            backButtonText={backButtonText}
+            isVisible={isSidebarVisible}
+            onToggle={toggleSidebar}
           />
-          <main className="main-content">
-            <LessonViewer 
-              lesson={activeLesson} 
-              isCompleted={activeLesson ? completedLessons.has(activeLesson.id) : false}
-              onToggleComplete={() => activeLesson && toggleLessonComplete(activeLesson.id)}
-              onNextLesson={handleNextLesson}
+          <div className="main-content-wrapper">
+            <DashboardHeader 
+              courseTitle={selectedCourse.title}
+              completedCount={completedCount}
+              totalCount={allCourseItems.length}
+              onLogout={handleLogout}
             />
-          </main>
+            <main className="main-content">
+              <LessonViewer 
+                lesson={activeLesson} 
+                isCompleted={activeLesson ? completedLessons.has(activeLesson.id) : false}
+                onToggleComplete={() => activeLesson && toggleLessonComplete(activeLesson.id)}
+                onNextLesson={handleNextLesson}
+              />
+            </main>
+          </div>
         </div>
-      </div>
-    );
-  }
-
-  if (selectedClassroom) {
+      );
+    }
+  
+    if (selectedClassroom) {
+      return (
+        <CourseGrid
+          courses={selectedClassroom.subCourses || []}
+          onCourseClick={handleSelectSubCourse}
+          title={selectedClassroom.title}
+          subtitle={`Welcome to the ${selectedClassroom.title} classroom. Select a course to begin.`}
+          onBack={handleBackToHome}
+        />
+      );
+    }
+  
     return (
       <CourseGrid
-        courses={selectedClassroom.subCourses || []}
-        onCourseClick={handleSelectSubCourse}
-        title={selectedClassroom.title}
-        subtitle={`Welcome to the ${selectedClassroom.title} classroom. Select a course to begin.`}
-        onBack={handleBackToHome}
+        courses={COURSES}
+        onCourseClick={handleSelectTopLevelCourse}
+        title="All Courses"
+        subtitle="Select a course to begin your learning journey."
       />
     );
   }
 
   return (
-    <CourseGrid
-      courses={COURSES}
-      onCourseClick={handleSelectTopLevelCourse}
-      title="All Courses"
-      subtitle="Select a course to begin your learning journey."
-    />
+    <>
+      {renderContent()}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => {
+          setIsAuthModalOpen(false);
+          setCourseToOpen(null);
+        }}
+      />
+    </>
   );
 };
 
